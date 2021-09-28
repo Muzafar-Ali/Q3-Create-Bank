@@ -1,9 +1,9 @@
 # Q3-Solidity-Assignment-2 create Bank
-# Roll No: IOT045448 
+ Roll No: IOT045448 
   BCC Batch 34
 
 
-# Create Crypto Bank Contract
+ Create Crypto Bank Contract
 
     1) The owner can start the bank with initial deposit/capital in ether (min 50 eths)
     2) Only the owner can close the bank. Upon closing the balance should return to the Owner
