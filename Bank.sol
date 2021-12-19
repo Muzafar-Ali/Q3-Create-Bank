@@ -23,13 +23,17 @@ contract Bank {
 
     // Req: 3) Anyone can open an account in the bank for Account opening they need to deposit ether with address
     // Req: 7) First 5 accounts will get a bonus of 1 ether
-    function Open_Account() external payable {
+    function Open_Account() external payable{
         require(msg.value > 0, "Deposit should be more than 0 to open account");
-        account_balances[msg.sender] = msg.value;
-        if (counter <= 4) {
+        require(account_balances[msg.sender] == 0,"Account is Opened, Now Deposit Please");
+
+        account_balances[msg.sender]  = msg.value;
+
+        if(counter <=4){ // first 4 account openers will get bonus of 1 ether
             account_balances[msg.sender] += 1 ether;
             counter++;
         }
+        
     }
 
     // Req: 5) Anyone can deposit in the bank
